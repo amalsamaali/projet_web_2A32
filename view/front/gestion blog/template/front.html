@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Trippier - Blog & Avis</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background: #f5f5f5;
+      }
+
+      a {
+        text-decoration: none;
+        color: white;
+      }
+
+      .navbar {
+        background-color: #000;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 30px;
+      }
+
+      .logo {
+        font-size: 24px;
+        font-weight: bold;
+        color: #00bfff;
+      }
+
+      .nav-links a {
+        margin-left: 20px;
+        font-weight: 500;
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+      }
+
+      .container {
+        max-width: 600px;
+        background: white;
+        margin: 40px auto;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        text-align: center;
+        color: #333;
+      }
+
+      label {
+        display: block;
+        margin-top: 15px;
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        font-size: 16px;
+      }
+
+      textarea {
+        resize: vertical;
+        height: 120px;
+      }
+
+      button {
+        width: 100%;
+        padding: 12px;
+        margin-top: 20px;
+        background-color: #28a745;
+        border: none;
+        color: white;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+
+      button:hover {
+        background-color: #1e7e34;
+      }
+
+      .confirmation {
+        background: #d1ecf1;
+        padding: 15px;
+        border-radius: 8px;
+        margin-top: 20px;
+        color: #0c5460;
+      }
+
+      .footer {
+        background-color: #000;
+        color: white;
+        text-align: center;
+        padding: 15px 0;
+        margin-top: 60px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div class="navbar">
+      <div class="logo">Trippier</div>
+      <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="tableau-de-bord.html" target="_blank">Transport</a>
+        <a href="#">Tours</a>
+        <a href="#">Accommodation</a>
+        <a href="#">Blog</a>
+        <a href="#">Subscription</a>
+      </div>
+    </div>
+
+    <!-- Formulaire ou Confirmation -->
+    <div class="container">
+      <h1>Laisser un avis</h1>
+
+      <?php if ($_SERVER["REQUEST_METHOD"] === "POST"): ?>
+      <?php
+                $nom = htmlspecialchars($_POST['nom']);
+                $email = htmlspecialchars($_POST['email']);
+                $titre = htmlspecialchars($_POST['titre']);
+                $message = htmlspecialchars($_POST['message']);
+            ?>
+      <div class="confirmation">
+        <h2>Merci pour votre commentaire !</h2>
+        <p>
+          <strong>Nom :</strong>
+          <?= $nom ?>
+        </p>
+        <p>
+          <strong>Email :</strong>
+          <?= $email ?>
+        </p>
+        <p>
+          <strong>Titre :</strong>
+          <?= $titre ?>
+        </p>
+        <p><strong>Message :</strong><br /><?= nl2br($message) ?></p>
+      </div>
+      <form method="GET">
+        <button type="submit">Laisser un autre avis</button>
+      </form>
+      <?php else: ?>
+      <form method="POST">
+        <label for="nom">Votre nom :</label>
+        <input type="text" id="nom" name="nom" required />
+
+        <label for="email">Votre email :</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="titre">Titre de votre avis :</label>
+        <input type="text" id="titre" name="titre" required />
+
+        <label for="message">Votre message :</label>
+        <textarea id="message" name="message" required></textarea>
+
+        <button type="submit">Publier</button>
+      </form>
+      <?php endif; ?>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      &copy;
+      <?= date("Y") ?>
+      Trippier. Tous droits réservés.
+    </div>
+  </body>
+</html>
