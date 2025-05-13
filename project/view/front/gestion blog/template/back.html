@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tripped - Commentaires</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f4f6f9;
+      display: flex;
+    }
+
+    .sidebar {
+      width: 250px;
+      height: 100vh;
+      background-color: #f4f6f9;
+      color: #aaa;
+      padding-top: 50px;
+      position: fixed;
+    }
+
+    .sidebar .logo {
+      text-align: center;
+      font-size: 40px;
+      font-weight: 600;
+      color: #000;
+      padding-bottom: 30px;
+    }
+
+    .sidebar a {
+      display: flex;
+      align-items: center;
+      padding: 10px 15px;
+      color: #aaa;
+      text-decoration: none;
+      font-size: 15px;
+      border-radius: 8px;
+      margin: 0 30px 10px;
+    }
+
+    .sidebar a i {
+      margin-right: 15px;
+      font-size: 20px;
+    }
+
+    .sidebar a:hover {
+      color: white;
+      background-color: #00A2E8;
+    }
+
+    .sidebar .logout {
+      margin-top: 140px;
+      text-align: center;
+    }
+
+    .content {
+      margin-left: 250px;
+      padding: 30px;
+      width: calc(100% - 250px);
+      height: 100vh;
+      background-color: #fff;
+      overflow-y: auto;
+    }
+
+    .content h1 {
+      font-size: 32px;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .button-group {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    .button-group button {
+      padding: 10px 20px;
+      border: none;
+      background-color: #00A2E8;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background 0.3s ease;
+    }
+
+    .button-group button:hover {
+      background-color: #007bbd;
+    }
+
+    .comment-list {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .comment-card {
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .comment-card h3 {
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+
+    .comment-card .date {
+      font-size: 12px;
+      color: #888;
+      margin-bottom: 10px;
+    }
+
+    .comment-card .text {
+      font-size: 15px;
+      color: #444;
+    }
+
+    .comment-card .rating {
+      margin-top: 10px;
+      color: #FFD700;
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <div class="logo">tripped</div>
+    <a href="#"><i class="fas fa-house-user"></i> Dashboard</a>
+    <a href="#"><i class="fas fa-calendar-day"></i> Bookings</a>
+    <a href="#"><i class="fas fa-bus"></i> Transports</a>
+    <a href="#"><i class="fas fa-users"></i> Customers</a>
+    <a href="#"><i class="fas fa-star-half-alt"></i> Reviews</a>
+    <a href="#"><i class="fas fa-route"></i> Tours</a>
+    <a href="#"><i class="fa-solid fa-gear"></i> Settings</a>
+    <a href="#" class="logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+  </div>
+
+  <div class="content">
+    <h1>Gestion des Commentaires</h1>
+
+    <div class="button-group">
+      <button><i class="fas fa-plus"></i> Ajouter un commentaire</button>
+      <button><i class="fas fa-edit"></i> Modifier un commentaire</button>
+      <button><i class="fas fa-trash"></i> Supprimer un commentaire</button>
+    </div>
+
+    <div class="comment-list">
+      <div class="comment-card">
+        <h3>Yasmine Ben Amor</h3>
+        <div class="date">08 avril 2025</div>
+        <div class="text">Très belle expérience de voyage ! Le transport était confortable et ponctuel.</div>
+        <div class="rating">★★★★★</div>
+      </div>
+
+      <div class="comment-card">
+        <h3>Ali Trabelsi</h3>
+        <div class="date">06 avril 2025</div>
+        <div class="text">Service client excellent, mais l'attente au départ était un peu longue.</div>
+        <div class="rating">★★★★☆</div>
+      </div>
+
+      <div class="comment-card">
+        <h3>Syrine Messaoudi</h3>
+        <div class="date">01 avril 2025</div>
+        <div class="text">Tout était bien organisé. J'ai adoré l'itinéraire proposé !</div>
+        <div class="rating">★★★★★</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+fonts.googleapis.com
